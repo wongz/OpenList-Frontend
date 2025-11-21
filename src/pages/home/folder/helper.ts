@@ -20,9 +20,8 @@ let selectedCache: StoreObj[] | null = null
 export function useSelectWithMouse() {
   const isMouseSupported = () => !isMobile && checkboxOpen()
   const openWithDoubleClick = () =>
-    isMouseSupported() && local["open_item_on_checkbox"] === "dblclick"
+    local["open_item_on_checkbox"] === "dblclick"
   const toggleWithClick = () =>
-    !isMouseSupported() &&
     local["open_item_on_checkbox"] === "disable_while_checked" &&
     haveSelected()
 
