@@ -22,8 +22,7 @@ export function useSelectWithMouse() {
   const openWithDoubleClick = () =>
     local["open_item_on_checkbox"] === "dblclick"
   const toggleWithClick = () =>
-    local["open_item_on_checkbox"] === "disable_while_checked" &&
-    haveSelected()
+    local["open_item_on_checkbox"] === "disable_while_checked" && haveSelected()
 
   const saveSelectionCache = () => {
     selectedCache = selectedObjs()
