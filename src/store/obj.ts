@@ -240,7 +240,9 @@ const getCountStr = (
 
   if (objs.length === 0) return ""
   const files = objs.length
-  return prefix === "selected" ? files.toString() + " /" : files.toString() + " " + t("home.obj.search.scopes.file")
+  return prefix === "selected"
+    ? files.toString() + " /"
+    : files.toString() + " " + t("home.obj.search.scopes.file")
 }
 
 export const countMsg = (filterType?: ObjType) =>
