@@ -239,19 +239,8 @@ const getCountStr = (
   }
 
   if (objs.length === 0) return ""
-
-  const folders = objs.filter((o) => o.is_dir).length
-  const files = objs.length - folders
-  const vars = { folders: folders.toString(), files: files.toString() }
-  const key =
-    folders && files
-      ? `${prefix}`
-      : folders
-        ? `${prefix}_folders`
-        : files
-          ? `${prefix}_files`
-          : ""
-  return key ? t(`home.obj.count.${key}`, vars) : ""
+  const files = objs.length
+  return files.toString() + (prefix === "selected" ? "/" : "")
 }
 
 export const countMsg = (filterType?: ObjType) =>
