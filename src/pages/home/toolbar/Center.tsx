@@ -34,7 +34,7 @@ export const Center = () => {
           w="max-content"
           color="$neutral11"
           as={Motion.div}
-          initial={{ opacity: 0, scale: 0.9, x: "50%", y: 10 }}
+          initial={{ opacity: 0, scale: 0.9, y: 10 }}
           animate={{ opacity: 1, scale: 1, x: "50%", y: 0 }}
           exit={{ opacity: 0, scale: 0.9 }}
           // @ts-ignore
