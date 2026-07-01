@@ -211,7 +211,7 @@ export const setLayout = (layout: LayoutType) => {
 
 const [_checkboxOpen, setCheckboxOpen] = createStorageSignal<string>(
   "checkbox-open",
-  "false",
+  "true",
 )
 export const checkboxOpen = () => _checkboxOpen() === "true"
 
@@ -242,19 +242,9 @@ const getCountStr = (
   }
 
   if (objs.length === 0) return ""
-
-  const folders = objs.filter((o) => o.is_dir).length
-  const files = objs.length - folders
-  const vars = { folders: folders.toString(), files: files.toString() }
-  const key =
-    folders && files
-      ? `${prefix}`
-      : folders
-        ? `${prefix}_folders`
-        : files
-          ? `${prefix}_files`
-          : ""
-  return key ? t(`home.obj.count.${key}`, vars) : ""
+  const files = objs.length
+  const vars = { files: files.toString() }
+  return t(`home.obj.count.${prefix}_files`, vars)
 }
 
 export const countMsg = (filterType?: ObjType) =>
