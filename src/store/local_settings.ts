@@ -38,7 +38,7 @@ export const initialLocalSettings = [
   },
   {
     key: "show_count_msg",
-    default: "none",
+    default: "visible",
     type: "select",
     options: ["none", "visible"],
   },
@@ -55,13 +55,13 @@ export const initialLocalSettings = [
   },
   {
     key: "list_item_filename_overflow",
-    default: "ellipsis",
+    default: "scrollable",
     type: "select",
     options: ["ellipsis", "scrollable", "multi_line"],
   },
   {
     key: "open_item_on_checkbox",
-    default: "direct",
+    default: "disable_while_checked",
     type: "select",
     options: ["direct", "dblclick", "disable_while_checked"],
     hidden: false,

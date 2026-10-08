@@ -92,7 +92,6 @@ export const ListItem = (props: { obj: StoreObj; index: number }) => {
           e.preventDefault()
           if (openWithDoubleClick()) return
           if (e.ctrlKey || e.metaKey || e.shiftKey) return
-          if (!restoreSelectionCache()) return
           if (toggleWithClick())
             return selectIndex(props.index, !props.obj.selected)
           to(pushHref(props.obj.name))
